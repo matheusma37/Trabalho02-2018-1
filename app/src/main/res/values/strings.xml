@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Trabalho02-2018-1</string>
+    <string-array name="array_menu">
+        <item>Candidato</item>
+        <item>Eleitor</item>
+    </string-array>
 </resources>
