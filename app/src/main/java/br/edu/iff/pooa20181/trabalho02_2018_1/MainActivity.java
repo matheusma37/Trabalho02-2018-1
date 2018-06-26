@@ -1,5 +1,6 @@
 package br.edu.iff.pooa20181.trabalho02_2018_1;
 
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -25,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 int opcao = spinner.getSelectedItemPosition();
                 if(opcao == 0){
-
+                    intent = new Intent(MainActivity.this, Candidato.class);
+                    startActivity(intent);
                 }else if(opcao == 1){
-
+                    intent = new Intent(MainActivity.this, Eleitor.class);
+                    startActivity(intent);
                 }
             }
         });
