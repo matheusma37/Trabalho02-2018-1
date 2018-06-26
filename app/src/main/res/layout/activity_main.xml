@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.edu.iff.pooa20181.trabalho02_2018_1.MainActivity">
+    tools:context="br.edu.iff.pooa20181.trabalho02_2018_1.activity.MainActivity">
     <TextView
         android:id="@+id/textoMenu"
         android:layout_width="wrap_content"
