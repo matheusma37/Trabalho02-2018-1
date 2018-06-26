@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 int opcao = spinner.getSelectedItemPosition();
                 if(opcao == 0){
-                    intent = new Intent(MainActivity.this, Candidato.class);
+                    intent = new Intent(MainActivity.this, CandidatoActivity.class);
                     startActivity(intent);
                 }else if(opcao == 1){
-                    intent = new Intent(MainActivity.this, Eleitor.class);
+                    intent = new Intent(MainActivity.this, EleitorActivity.class);
                     startActivity(intent);
                 }
                 intent = null;
