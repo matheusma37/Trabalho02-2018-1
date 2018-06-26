@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 
 public class MainActivity extends AppCompatActivity {
-    private Intent intent;
+    private Intent intent = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, Eleitor.class);
                     startActivity(intent);
                 }
+                intent = null;
             }
         });
     }

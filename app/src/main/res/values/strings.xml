@@ -4,4 +4,6 @@
         <item>Candidato</item>
         <item>Eleitor</item>
     </string-array>
+    <string name="text_menu">Menu</string>
+    <string name="btn_menu">Confirmar</string>
 </resources>
