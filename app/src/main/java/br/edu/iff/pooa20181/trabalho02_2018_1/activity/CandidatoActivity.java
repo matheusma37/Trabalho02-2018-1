@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import java.util.List;
 
+import br.edu.iff.pooa20181.trabalho02_2018_1.Detalhe;
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.CandidatoAdapter;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.ClickRecyclerViewListener;
@@ -29,7 +30,7 @@ public class CandidatoActivity extends AppCompatActivity implements ClickRecycle
         realm = Realm.getDefaultInstance();
 
         btnCandidato.setOnClickListener((view) -> {
-            Intent intent = new Intent(CandidatoActivity.this, Detalhe.class);
+            Intent intent = new Intent(CandidatoActivity.this, NovoCandidato.class);
             startActivity(intent);
         });
 
@@ -58,6 +59,7 @@ public class CandidatoActivity extends AppCompatActivity implements ClickRecycle
         Candidato candidato = (Candidato) object;
         Intent intent = new Intent(CandidatoActivity.this, Detalhe.class);
         intent.putExtra("numeroNaUrna",candidato.getNumeroNaUrna());
+        intent.putExtra("tipo", "candidato");
         startActivity(intent);
     }
 

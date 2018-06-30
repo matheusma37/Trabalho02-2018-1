@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import java.util.List;
 
+import br.edu.iff.pooa20181.trabalho02_2018_1.Detalhe;
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.ClickRecyclerViewListener;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.EleitorAdapter;
@@ -29,7 +30,7 @@ public class EleitorActivity extends AppCompatActivity implements ClickRecyclerV
         realm = Realm.getDefaultInstance();
 
         btnEleitor.setOnClickListener((view) -> {
-            Intent intent = new Intent(EleitorActivity.this, Detalhe.class);
+            Intent intent = new Intent(EleitorActivity.this, NovoEleitor.class);
             startActivity(intent);
         });
 
@@ -58,6 +59,7 @@ public class EleitorActivity extends AppCompatActivity implements ClickRecyclerV
         Eleitor eleitor = (Eleitor) object;
         Intent intent = new Intent(EleitorActivity.this, Detalhe.class);
         intent.putExtra("numeroDoTitulo",eleitor.getNumeroDoTitulo());
+        intent.putExtra("tipo", "eleitor");
         startActivity(intent);
     }
 
