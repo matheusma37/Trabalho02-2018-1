@@ -1,4 +1,4 @@
-package br.edu.iff.pooa20181.trabalho02_2018_1;
+package br.edu.iff.pooa20181.trabalho02_2018_1.activity;
 
 import android.content.Intent;
 import android.os.Build;
@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.model.Candidato;
 import br.edu.iff.pooa20181.trabalho02_2018_1.model.Eleitor;
 import io.realm.Realm;

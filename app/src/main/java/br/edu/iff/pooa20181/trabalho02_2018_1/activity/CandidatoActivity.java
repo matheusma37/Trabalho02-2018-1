@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import java.util.List;
 
-import br.edu.iff.pooa20181.trabalho02_2018_1.Detalhe;
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.CandidatoAdapter;
 import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.ClickRecyclerViewListener;
