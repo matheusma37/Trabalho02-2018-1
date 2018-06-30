@@ -17,10 +17,9 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
     private List<Eleitor> eleitores;
     private Context context;
     private static ClickRecyclerViewListener clickRecyclerViewListener;
-    private RecyclerView.ViewHolder holder;
-    private int position;
 
-    public EleitorAdapter(List<Eleitor> eleitores, Context context,ClickRecyclerViewListener clickRecyclerViewListener) {
+    public EleitorAdapter(List<Eleitor> eleitores, Context context,
+                          ClickRecyclerViewListener clickRecyclerViewListener) {
         this.eleitores = eleitores;
         this.context = context;
         this.clickRecyclerViewListener = clickRecyclerViewListener;

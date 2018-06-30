@@ -18,9 +18,9 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
     private Context context;
     private static ClickRecyclerViewListener clickRecyclerViewListener;
     private RecyclerView.ViewHolder holder;
-    private int position;
 
-    public CandidatoAdapter(List<Candidato> candidatos, Context context, ClickRecyclerViewListener clickRecyclerViewListener) {
+    public CandidatoAdapter(List<Candidato> candidatos, Context context,
+                            ClickRecyclerViewListener clickRecyclerViewListener) {
         this.candidatos = candidatos;
         this.context = context;
         this.clickRecyclerViewListener = clickRecyclerViewListener;

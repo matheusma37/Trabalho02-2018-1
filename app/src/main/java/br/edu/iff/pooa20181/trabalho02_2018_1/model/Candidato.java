@@ -1,8 +1,17 @@
 package br.edu.iff.pooa20181.trabalho02_2018_1.model;
 
-public class Candidato {
-    private String nome, partido, cargo, numeroNaUrna, estado, municipio;
+import java.io.Serializable;
+
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Candidato extends RealmObject implements Serializable {
+    private String nome, partido, cargo, estado, municipio;
+    @PrimaryKey
+    private String numeroNaUrna;
     private long numeroDeVotos;
+
+    public Candidato(){}
 
     public Candidato(String nome, String partido,
                      String cargo, String numeroNaUrna,

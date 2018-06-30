@@ -1,10 +1,18 @@
 package br.edu.iff.pooa20181.trabalho02_2018_1.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Eleitor {
-    private String nome, nomeDaMae, numeroDoTitulo, zona, secao, municipio;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Eleitor extends RealmObject implements Serializable {
+    private String nome, nomeDaMae, zona, secao, municipio;
+    @PrimaryKey
+    private String numeroDoTitulo;
     private Date dataDeNascimento;
+
+    public Eleitor(){}
 
     public Eleitor(String nome, String nomeDaMae,
                    String numeroDoTitulo, String zona,
