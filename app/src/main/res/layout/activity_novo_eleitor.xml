@@ -87,35 +87,28 @@
 
     <TextView
         android:id="@+id/txtVTituloE"
-        android:layout_width="169dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="69dp"
+        android:layout_height="27dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Número de Votos:"
+        android:text="Título:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonEditarE"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVNomeMaeE"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintTop_toBottomOf="@+id/txtVNomeMaeE" />
 
     <EditText
         android:id="@+id/edtTTituloE"
-        android:layout_width="172dp"
+        android:layout_width="264dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:editable="false"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDeletarE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toEndOf="@+id/txtVTituloE"
-        app:layout_constraintTop_toBottomOf="@+id/edtTNomeMaeE"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/edtTNomeMaeE" />
 
     <EditText
         android:id="@+id/edtTDataNascimentoE"
@@ -124,7 +117,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:editable="false"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,26 +187,32 @@
         app:layout_constraintTop_toBottomOf="@+id/edtTMunicipioE" />
 
     <Button
-        android:id="@+id/buttonEditarE"
-        android:layout_width="123dp"
+        android:id="@+id/buttonSalvarE"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Editar"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonDeletarE"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonLimparE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVTituloE" />
 
     <Button
-        android:id="@+id/buttonDeletarE"
-        android:layout_width="125dp"
+        android:id="@+id/buttonLimparE"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
-        android:layout_marginEnd="52dp"
-        android:text="Deletar"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Limpar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonSalvarE"
+        app:layout_constraintTop_toBottomOf="@+id/edtTTituloE"
+        app:layout_constraintVertical_bias="0.403" />
 
 </android.support.constraint.ConstraintLayout>
