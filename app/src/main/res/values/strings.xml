@@ -7,5 +7,6 @@
     <string name="text_menu">Menu</string>
     <string name="btn_menu">Confirmar</string>
     <string name="texto_candidato">Candidatos</string>
+    <string name="texto_eleitor">Eleitores</string>
     <string name="botao_novo">Novo</string>
 </resources>
