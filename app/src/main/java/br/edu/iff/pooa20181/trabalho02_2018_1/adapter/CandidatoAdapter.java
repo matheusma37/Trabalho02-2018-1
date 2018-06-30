@@ -1,44 +1,60 @@
 package br.edu.iff.pooa20181.trabalho02_2018_1.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.model.Candidato;
 
-public class CandidatoAdapter extends ArrayAdapter<Candidato> {
+public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.CandidatoViewHolder> {
 
-    private final Context context;
-    private final ArrayList<Candidato> candidatos;
+    private List<Candidato> candidatos;
+    private Context context;
+    private static ClickRecyclerViewListener clickRecyclerViewListener;
+    private RecyclerView.ViewHolder holder;
+    private int position;
 
-    public CandidatoAdapter(Context context, ArrayList<Candidato> candidatos) {
-        super(context, R.layout.linha_candidato, candidatos);
-        this.context = context;
-        this.candidatos = candidatos;
+    @Override
+    public CandidatoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context)
+                .inflate(R.layout.linha_candidato, parent, false);
+        CandidatoViewHolder candidatoViewHolder = new CandidatoViewHolder(view);
+        return candidatoViewHolder;
     }
 
     @Override
-    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+    public void onBindViewHolder(CandidatoViewHolder viewHolder, int position) {
+        CandidatoViewHolder candidatoViewHolder = viewHolder;
+        Candidato candidato = this.candidatos.get(position);
+        candidatoViewHolder.nome.setText(candidato.getNome());
+        candidatoViewHolder.cargo.setText(candidato.getCargo());
+        candidatoViewHolder.partido.setText(candidato.getPartido());
+        candidatoViewHolder.numero.setText(candidato.getNumeroNaUrna());
+    }
 
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    @Override
+    public int getItemCount() {
+        return candidatos.size();
+    }
 
-        View rowView = inflater.inflate(R.layout.linha_candidato, parent, false);
-        TextView nome = (TextView) rowView.findViewById(R.id.nomeCandidato);
-        TextView partido = (TextView) rowView.findViewById(R.id.partidoCandidato);
-        TextView cargo = (TextView) rowView.findViewById(R.id.cargoCandidato);
-        TextView numero = (TextView) rowView.findViewById(R.id.numeroCandidato);
-        nome.setText(candidatos.get(position).getNome());
-        partido.setText(candidatos.get(position).getPartido());
-        cargo.setText(candidatos.get(position).getCargo());
-        numero.setText(candidatos.get(position).getNumeroNaUrna());
-        return rowView;
+    public static class CandidatoViewHolder extends RecyclerView.ViewHolder{
+        private final TextView nome;
+        private final TextView partido;
+        private final TextView cargo;
+        private final TextView numero;
+
+        public CandidatoViewHolder(View view){
+            super(view);
+            nome = (TextView) itemView.findViewById(R.id.nomeCandidato);
+            partido = (TextView) itemView.findViewById(R.id.partidoCandidato);
+            cargo = (TextView) itemView.findViewById(R.id.cargoCandidato);
+            numero = (TextView) itemView.findViewById(R.id.numeroCandidato);
+        }
     }
 }
