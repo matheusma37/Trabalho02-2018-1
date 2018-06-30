@@ -20,10 +20,16 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
     private RecyclerView.ViewHolder holder;
     private int position;
 
+    public EleitorAdapter(List<Eleitor> eleitores, Context context,ClickRecyclerViewListener clickRecyclerViewListener) {
+        this.eleitores = eleitores;
+        this.context = context;
+        this.clickRecyclerViewListener = clickRecyclerViewListener;
+    }
+
     @Override
     public EleitorAdapter.EleitorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.linha_candidato, parent, false);
+                .inflate(R.layout.linha_eleitor, parent, false);
         EleitorAdapter.EleitorViewHolder eleitorViewHolder = new EleitorAdapter.EleitorViewHolder(view);
         return eleitorViewHolder;
     }

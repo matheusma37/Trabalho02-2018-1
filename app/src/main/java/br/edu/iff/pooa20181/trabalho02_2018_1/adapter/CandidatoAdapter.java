@@ -20,6 +20,12 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
     private RecyclerView.ViewHolder holder;
     private int position;
 
+    public CandidatoAdapter(List<Candidato> candidatos, Context context, ClickRecyclerViewListener clickRecyclerViewListener) {
+        this.candidatos = candidatos;
+        this.context = context;
+        this.clickRecyclerViewListener = clickRecyclerViewListener;
+    }
+
     @Override
     public CandidatoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
