@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 
-public class NovoEleitor extends AppCompatActivity {
+public class NovoCandidato extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_novo_eleitor);
+        setContentView(R.layout.activity_novo_candidato);
     }
 }

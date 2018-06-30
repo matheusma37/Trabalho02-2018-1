@@ -66,7 +66,5 @@ public class CandidatoActivity extends AppCompatActivity implements ClickRecycle
     public void finish(){
         super.finish();
         realm.close();
-
-
     }
 }
