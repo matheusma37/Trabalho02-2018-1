@@ -53,9 +53,7 @@ public class EleitorActivity extends AppCompatActivity implements ClickRecyclerV
     }
 
     public List<Eleitor> getEleitores(){
-
         return (List) realm.where(Eleitor.class).findAll();
-
     }
 
     @Override
