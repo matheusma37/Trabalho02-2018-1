@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.List;
@@ -28,9 +29,13 @@ public class CandidatoActivity extends AppCompatActivity implements ClickRecycle
 
         realm = Realm.getDefaultInstance();
 
-        btnCandidato.setOnClickListener((view) -> {
-            Intent intent = new Intent(CandidatoActivity.this, NovoCandidato.class);
-            startActivity(intent);
+        btnCandidato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CandidatoActivity.this, NovoCandidato.class);
+                intent.putExtra("numeroNaUrna", "-1");
+                startActivity(intent);
+            }
         });
 
     }

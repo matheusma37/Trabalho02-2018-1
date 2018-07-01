@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.List;
@@ -28,9 +29,13 @@ public class EleitorActivity extends AppCompatActivity implements ClickRecyclerV
 
         realm = Realm.getDefaultInstance();
 
-        btnEleitor.setOnClickListener((view) -> {
-            Intent intent = new Intent(EleitorActivity.this, NovoEleitor.class);
-            startActivity(intent);
+        btnEleitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EleitorActivity.this, NovoEleitor.class);
+                intent.putExtra("numeroDoTitulo", "-1");
+                startActivity(intent);
+            }
         });
 
     }
