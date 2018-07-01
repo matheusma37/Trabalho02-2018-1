@@ -16,7 +16,7 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
 
     private List<Eleitor> eleitores;
     private Context context;
-    private static ClickRecyclerViewListener clickRecyclerViewListener;
+    private ClickRecyclerViewListener clickRecyclerViewListener;
 
     public EleitorAdapter(List<Eleitor> eleitores, Context context,
                           ClickRecyclerViewListener clickRecyclerViewListener) {
@@ -48,7 +48,7 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
         return eleitores.size();
     }
 
-    public static class EleitorViewHolder extends RecyclerView.ViewHolder{
+    public class EleitorViewHolder extends RecyclerView.ViewHolder{
         private final TextView nome;
         private final TextView titulo;
         private final TextView secao;
@@ -60,6 +60,13 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
             titulo = (TextView) itemView.findViewById(R.id.numeroTituloEleitor);
             secao = (TextView) itemView.findViewById(R.id.secaoEleitor);
             zona = (TextView) itemView.findViewById(R.id.zonaEleitor);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickRecyclerViewListener.onClick(eleitores.get(getLayoutPosition()));
+                }
+            });
         }
     }
 }

@@ -16,8 +16,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
 
     private List<Candidato> candidatos;
     private Context context;
-    private static ClickRecyclerViewListener clickRecyclerViewListener;
-    private RecyclerView.ViewHolder holder;
+    private ClickRecyclerViewListener clickRecyclerViewListener;
 
     public CandidatoAdapter(List<Candidato> candidatos, Context context,
                             ClickRecyclerViewListener clickRecyclerViewListener) {
@@ -49,7 +48,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
         return candidatos.size();
     }
 
-    public static class CandidatoViewHolder extends RecyclerView.ViewHolder{
+    public class CandidatoViewHolder extends RecyclerView.ViewHolder{
         private final TextView nome;
         private final TextView partido;
         private final TextView cargo;
@@ -61,6 +60,13 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
             partido = (TextView) itemView.findViewById(R.id.partidoCandidato);
             cargo = (TextView) itemView.findViewById(R.id.cargoCandidato);
             numero = (TextView) itemView.findViewById(R.id.numeroCandidato);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickRecyclerViewListener.onClick(candidatos.get(getLayoutPosition()));
+                }
+            });
         }
     }
 }
