@@ -48,7 +48,7 @@ public class NovoCandidato extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
 
         if (iNumeroUrna > 0){
-            Candidato candidato = (Candidato) realm.where(Candidato.class).equalTo("numeroNaUrna",
+            Candidato candidato = realm.where(Candidato.class).equalTo("numeroNaUrna",
                     sNumeroUrna).findFirst();
 
             edtNome.setText(candidato.getNome());
