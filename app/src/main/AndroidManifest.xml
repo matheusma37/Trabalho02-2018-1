@@ -19,9 +19,10 @@
         </activity>
         <activity android:name=".activity.CandidatoActivity" />
         <activity android:name=".activity.EleitorActivity" />
-        <activity android:name=".activity.Detalhe" />
         <activity android:name=".activity.NovoEleitor" />
-        <activity android:name=".activity.NovoCandidato"></activity>
+        <activity android:name=".activity.NovoCandidato" />
+        <activity android:name=".activity.DetalheEleitor" />
+        <activity android:name=".activity.DetalheCandidato"></activity>
     </application>
 
 </manifest>

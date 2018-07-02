@@ -37,10 +37,10 @@ public class EleitorAdapter extends RecyclerView.Adapter<EleitorAdapter.EleitorV
     public void onBindViewHolder(EleitorAdapter.EleitorViewHolder viewHolder, int position) {
         EleitorAdapter.EleitorViewHolder eleitorViewHolder = viewHolder;
         Eleitor eleitor = this.eleitores.get(position);
-        eleitorViewHolder.nome.setText(eleitor.getNome());
-        eleitorViewHolder.titulo.setText(eleitor.getNumeroDoTitulo());
-        eleitorViewHolder.secao.setText(eleitor.getSecao());
-        eleitorViewHolder.zona.setText(eleitor.getZona());
+        eleitorViewHolder.nome.setText("Nome: " + eleitor.getNome());
+        eleitorViewHolder.titulo.setText("Título: " + eleitor.getNumeroDoTitulo());
+        eleitorViewHolder.secao.setText("Seção: " + eleitor.getSecao());
+        eleitorViewHolder.zona.setText("Zona: " + eleitor.getZona());
     }
 
     @Override

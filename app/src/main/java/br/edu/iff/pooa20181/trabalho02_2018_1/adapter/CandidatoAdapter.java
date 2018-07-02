@@ -37,10 +37,10 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.Cand
     public void onBindViewHolder(CandidatoViewHolder viewHolder, int position) {
         CandidatoViewHolder candidatoViewHolder = viewHolder;
         Candidato candidato = this.candidatos.get(position);
-        candidatoViewHolder.nome.setText(candidato.getNome());
-        candidatoViewHolder.cargo.setText(candidato.getCargo());
-        candidatoViewHolder.partido.setText(candidato.getPartido());
-        candidatoViewHolder.numero.setText(candidato.getNumeroNaUrna());
+        candidatoViewHolder.nome.setText("Nome: " + candidato.getNome());
+        candidatoViewHolder.cargo.setText("Cargo: " + candidato.getCargo());
+        candidatoViewHolder.partido.setText("Partido: " + candidato.getPartido());
+        candidatoViewHolder.numero.setText("Número na urna: " + candidato.getNumeroNaUrna());
     }
 
     @Override

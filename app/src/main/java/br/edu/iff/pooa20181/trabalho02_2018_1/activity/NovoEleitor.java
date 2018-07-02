@@ -21,7 +21,7 @@ public class NovoEleitor extends AppCompatActivity {
 
     private int iNumeroTitulo;
     private String sNumeroTitulo;
-
+    private Eleitor eleitor;
     private Realm realm;
 
     @Override
@@ -46,9 +46,10 @@ public class NovoEleitor extends AppCompatActivity {
         iNumeroTitulo = Integer.parseInt(sNumeroTitulo);
 
         realm = Realm.getDefaultInstance();
+        eleitor = null;
 
-        if (iNumeroTitulo > 0) {
-            Eleitor eleitor = realm.where(Eleitor.class).equalTo("numeroDoTitulo",
+        if (iNumeroTitulo >= 0) {
+            eleitor = realm.where(Eleitor.class).equalTo("numeroDoTitulo",
                     sNumeroTitulo).findFirst();
 
             edtNome.setText(eleitor.getNome());
@@ -88,20 +89,31 @@ public class NovoEleitor extends AppCompatActivity {
     private void salvar(){
         realm.beginTransaction();
 
-        Eleitor eleitor = new Eleitor();
-        eleitor.setNome(edtNome.getText().toString());
-        eleitor.setZona(edtZona.getText().toString());
-        eleitor.setSecao(edtSecao.getText().toString());
-        eleitor.setMunicipio(edtMunicipio.getText().toString());
-        eleitor.setDataDeNascimento(edtDataNasc.getText().toString());
-        eleitor.setNomeDaMae(edtNomeMae.getText().toString());
-        eleitor.setNumeroDoTitulo(edtTitulo.getText().toString());
+        if (eleitor == null) {
+            eleitor = new Eleitor();
+            eleitor.setNumeroDoTitulo(edtTitulo.getText().toString());
+        }
+
+        setar(eleitor);
 
         realm.copyToRealm(eleitor);
         realm.commitTransaction();
-        realm.close();
 
         Toast.makeText(this,"Eleitor Cadastrado",Toast.LENGTH_LONG).show();
         this.finish();
+    }
+
+    private void setar(Eleitor e){
+        e.setNome(edtNome.getText().toString());
+        e.setZona(edtZona.getText().toString());
+        e.setSecao(edtSecao.getText().toString());
+        e.setMunicipio(edtMunicipio.getText().toString());
+        e.setDataDeNascimento(edtDataNasc.getText().toString());
+        e.setNomeDaMae(edtNomeMae.getText().toString());
+    }
+
+    public void finish(){
+        realm.close();
+        super.finish();
     }
 }

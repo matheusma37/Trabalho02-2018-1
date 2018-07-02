@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonLimparC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVNumeroVotosC"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.591" />
 
     <EditText
         android:id="@+id/edtTNomeC"
@@ -196,6 +196,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtVNumeroVotosC"

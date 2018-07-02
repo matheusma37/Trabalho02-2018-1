@@ -59,12 +59,10 @@ public class EleitorActivity extends AppCompatActivity implements ClickRecyclerV
     @Override
     public void onClick(Object object) {
         Eleitor eleitor = (Eleitor) object;
-        Intent intent = new Intent(EleitorActivity.this, Detalhe.class);
+        Intent intent = new Intent(EleitorActivity.this, DetalheEleitor.class);
         intent.putExtra("numeroDoTitulo",eleitor.getNumeroDoTitulo());
-        intent.putExtra("tipo", "eleitor");
         startActivity(intent);
     }
-
 
     public void finish(){
         super.finish();

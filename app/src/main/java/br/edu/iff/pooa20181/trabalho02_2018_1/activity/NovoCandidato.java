@@ -23,6 +23,7 @@ public class NovoCandidato extends AppCompatActivity {
     private String sNumeroUrna;
 
     private Realm realm;
+    private Candidato candidato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +47,10 @@ public class NovoCandidato extends AppCompatActivity {
         iNumeroUrna = Integer.parseInt(sNumeroUrna);
 
         realm = Realm.getDefaultInstance();
+        candidato = null;
 
-        if (iNumeroUrna > 0){
-            Candidato candidato = realm.where(Candidato.class).equalTo("numeroNaUrna",
+        if (iNumeroUrna >= 0){
+            candidato = realm.where(Candidato.class).equalTo("numeroNaUrna",
                     sNumeroUrna).findFirst();
 
             edtNome.setText(candidato.getNome());
@@ -80,7 +82,7 @@ public class NovoCandidato extends AppCompatActivity {
                 if (iNumeroUrna < 0){
                     edtNumeroUrna.setText("");
                 }
-                edtNumeroVotos.setText("");
+                edtNumeroVotos.setText("0");
             }
         });
     }
@@ -88,21 +90,31 @@ public class NovoCandidato extends AppCompatActivity {
     private void salvar(){
         realm.beginTransaction();
 
-        Candidato candidato = new Candidato();
-        candidato.setNome(edtNome.getText().toString());
-        candidato.setPartido(edtPartido.getText().toString());
-        candidato.setCargo(edtCargo.getText().toString());
-        candidato.setMunicipio(edtMunicipio.getText().toString());
-        candidato.setEstado(edtEstado.getText().toString());
-        candidato.setNumeroNaUrna(edtNumeroUrna.getText().toString());
-        candidato.setNumeroDeVotos(Integer.parseInt(edtNumeroVotos.getText().toString()));
+        if(candidato == null){
+            candidato = new Candidato();
+            candidato.setNumeroNaUrna(edtNumeroUrna.getText().toString());
+        }
+
+        setar(candidato);
 
         realm.copyToRealm(candidato);
         realm.commitTransaction();
-        realm.close();
 
         Toast.makeText(this,"Candidato Cadastrado",Toast.LENGTH_LONG).show();
         this.finish();
     }
 
+    private void setar(Candidato c){
+        c.setNome(edtNome.getText().toString());
+        c.setPartido(edtPartido.getText().toString());
+        c.setCargo(edtCargo.getText().toString());
+        c.setMunicipio(edtMunicipio.getText().toString());
+        c.setEstado(edtEstado.getText().toString());
+        c.setNumeroDeVotos(Integer.parseInt(edtNumeroVotos.getText().toString()));
+    }
+
+    public void finish(){
+        realm.close();
+        super.finish();
+    }
 }

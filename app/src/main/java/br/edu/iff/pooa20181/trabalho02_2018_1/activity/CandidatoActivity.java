@@ -61,12 +61,10 @@ public class CandidatoActivity extends AppCompatActivity implements ClickRecycle
     @Override
     public void onClick(Object object) {
         Candidato candidato = (Candidato) object;
-        Intent intent = new Intent(CandidatoActivity.this, Detalhe.class);
+        Intent intent = new Intent(CandidatoActivity.this, DetalheCandidato.class);
         intent.putExtra("numeroNaUrna",candidato.getNumeroNaUrna());
-        intent.putExtra("tipo", "candidato");
         startActivity(intent);
     }
-
 
     public void finish(){
         super.finish();

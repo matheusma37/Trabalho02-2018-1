@@ -5,7 +5,7 @@ import java.io.Serializable;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class Candidato extends RealmObject implements Serializable,Pessoa {
+public class Candidato extends RealmObject implements Serializable {
     private String nome, partido, cargo, estado, municipio;
     @PrimaryKey
     private String numeroNaUrna;

@@ -196,7 +196,7 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonLimparE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVTituloE"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.568" />
 
     <Button
         android:id="@+id/buttonLimparE"
