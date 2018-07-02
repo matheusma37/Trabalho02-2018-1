@@ -62,6 +62,11 @@ public class DetalheCandidato extends AppCompatActivity {
                 startActivity(intentEditar);
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
 
         txtNome.setText("Nome: " + candidato.getNome());
         txtPartido.setText("Partido: " + candidato.getPartido());
@@ -70,6 +75,7 @@ public class DetalheCandidato extends AppCompatActivity {
         txtMunicipio.setText("Município: " + candidato.getMunicipio());
         txtEstado.setText("Estado: " + candidato.getEstado());
         txtCargo.setText("Cargo: " + candidato.getCargo());
+
     }
 
     public void deletar(){

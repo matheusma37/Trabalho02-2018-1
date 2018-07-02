@@ -62,6 +62,11 @@ public class DetalheEleitor extends AppCompatActivity {
                 startActivity(intentEditar);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         txtNome.setText("Nome: " + eleitor.getNome());
         txtTitulo.setText("Título: " + eleitor.getNumeroDoTitulo());
@@ -72,7 +77,7 @@ public class DetalheEleitor extends AppCompatActivity {
         txtNomeMae.setText("Nome da Mãe: " + eleitor.getNomeDaMae());
     }
 
-    public void deletar(){
+        public void deletar(){
         realm.beginTransaction();
 
         eleitor.deleteFromRealm();
